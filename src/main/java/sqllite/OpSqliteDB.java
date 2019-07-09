@@ -54,13 +54,13 @@ public class OpSqliteDB {
 	public static void func1(Connection connection) throws Exception {
 		OpMysqlDB mysqlDB = new OpMysqlDB();
         Statement statement = connection.createStatement();
-        Statement statement1 = connection.createStatement();
+		// Statement statement1 = connection.createStatement();
         statement.setQueryTimeout(30); // set timeout to 30 sec.
         // 执行查询语句
 
         ResultSet rs = statement.executeQuery("select * from t_FacialFeature");
 //		Map<String, Object> map = null;
-		String imagePath = "E:/feature/";
+		// String imagePath = "E:/feature/";
         while (rs.next()) {
 			String col1 = rs.getString("id");
 			byte[] bytes = rs.getBytes(4);
